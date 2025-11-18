@@ -22,24 +22,24 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-4 lg:p-6 space-y-6">
       {/* Header Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="space-y-2"
+        className="space-y-3"
       >
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Lead Management</h1>
-            <p className="text-muted-foreground mt-1">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Lead Management</h1>
+            <p className="text-sm text-muted-foreground mt-1">
               Track and manage your sales pipeline
             </p>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <Button variant="outline" size="sm" className="gap-2">
               <Calendar className="h-4 w-4" />
               <span className="hidden sm:inline">Date Range</span>
@@ -54,7 +54,7 @@ export default function DashboardPage() {
             </Button>
 
             {/* View Toggle */}
-            <div className="flex items-center gap-1 ml-2 border rounded-lg p-1">
+            <div className="hidden sm:flex items-center gap-1 ml-2 border rounded-lg p-1">
               <Button
                 variant={view === "kanban" ? "secondary" : "ghost"}
                 size="sm"
@@ -75,8 +75,8 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Breadcrumbs */}
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        {/* Breadcrumbs - Hidden on mobile */}
+        <div className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
           <span>Dashboard</span>
           <span>/</span>
           <span className="text-foreground">Leads</span>

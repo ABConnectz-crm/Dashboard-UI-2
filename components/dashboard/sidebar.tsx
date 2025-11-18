@@ -31,7 +31,7 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        "sticky top-0 h-screen border-r bg-card/50 glass-effect transition-all duration-300 flex flex-col",
+        "hidden lg:flex sticky top-0 h-screen border-r bg-card/50 glass-effect transition-all duration-300 flex-col",
         collapsed ? "w-16" : "w-64"
       )}
     >
